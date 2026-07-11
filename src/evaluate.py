@@ -102,8 +102,12 @@ def predict_live(city: str, info: dict, horizon_hours: int = 48) -> pd.DataFrame
     feeding its own predictions back in as history (autoregressive extension).
     """
     model, scaler = load_model(city)
+    # +1 day buffer: forecast_days is anchored to local midnight, not "now", so a
+    # request made partway through today needs an extra day to cover a full
+    # horizon_hours forward from the current hour.
+    forecast_days = -(-horizon_hours // 24) + 1
     live = fetch_live_forecast(info["lat"], info["lon"], info["timezone"],
-                                forecast_days=max(2, -(-horizon_hours // 24)), past_days=SEQUENCE_LENGTH // 24 + 1)
+                                forecast_days=forecast_days, past_days=SEQUENCE_LENGTH // 24 + 1)
 
     now_floor = pd.Timestamp.now(tz=None).floor("h")
     history = live.loc[:now_floor - pd.Timedelta(hours=1), "temperature_2m"].tail(SEQUENCE_LENGTH)
