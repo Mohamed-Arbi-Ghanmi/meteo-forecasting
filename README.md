@@ -24,9 +24,9 @@ forecast — live, on Streamlit.
 - **Model**: a 2-layer LSTM per city, mapping the last 72 hours of temperature
   to the next 24 hours in one shot (longer horizons roll the model forward
   autoregressively). Trained on ~3 years of hourly data per city.
-- **Shipped pretrained**: weights for Tunis, Paris, London, New York, and Tokyo
-  live in `models/`. Nothing trains at request time — the app only runs
-  inference plus live API calls.
+- **Shipped pretrained**: weights for Tunis, Sfax, Sousse, Bizerte, Gabès,
+  Paris, London, New York, and Tokyo live in `models/`. Nothing trains at
+  request time — the app only runs inference plus live API calls.
 
 ## Project layout
 
