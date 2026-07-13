@@ -17,6 +17,10 @@ CITIES = {
     "London":    {"lat": 51.5074, "lon": -0.1278, "timezone": "Europe/London"},
     "New York":  {"lat": 40.7128, "lon": -74.0060, "timezone": "America/New_York"},
     "Tokyo":     {"lat": 35.6762, "lon": 139.6503, "timezone": "Asia/Tokyo"},
+    "Sfax":      {"lat": 34.7406, "lon": 10.7603, "timezone": "Africa/Tunis"},
+    "Sousse":    {"lat": 35.8254, "lon": 10.6370, "timezone": "Africa/Tunis"},
+    "Bizerte":   {"lat": 37.2744, "lon": 9.8739,  "timezone": "Africa/Tunis"},
+    "Gabès":     {"lat": 33.8815, "lon": 10.0982, "timezone": "Africa/Tunis"},
 }
 
 # Model / windowing hyperparameters
