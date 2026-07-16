@@ -57,4 +57,4 @@ python -m src.train --city "Berlin"
 ## Deployment
 
 Deployed on [Streamlit Community Cloud](https://streamlit.io/cloud), straight
-from this repo. No secrets required,Open-Meteo needs no API key.
+from this repo. No secrets required, Open-Meteo needs no API key.
